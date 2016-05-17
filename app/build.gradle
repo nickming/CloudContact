@@ -22,7 +22,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
     compile files('libs/avoscloud-sdk-v3.13.11.jar')
     compile files('libs/avoscloud-push-v3.13.11.jar')
     compile files('libs/fastjson.jar')
@@ -31,4 +30,11 @@ dependencies {
     compile files('libs/okhttp-2.6.0-leancloud.jar')
     compile files('libs/okio-1.6.0-leancloud.jar')
     compile files('libs/protobuf-java-2.6.1.jar')
+
+    //rxjava和rxandroid框架
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.android.support:design:23.3.0'
 }
