@@ -10,5 +10,7 @@ import android.support.v7.app.AppCompatActivity;
  * E-mail:962570483@qq.com
  */
 public class BaseActivity extends AppCompatActivity{
-    
+
+
+
 }
