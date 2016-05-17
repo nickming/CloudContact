@@ -8,4 +8,6 @@ package com.nickming.cloudcontact.module.index.data;
  * E-mail:962570483@qq.com
  */
 public interface ContactDataSource {
+
+
 }

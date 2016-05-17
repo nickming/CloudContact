@@ -3,7 +3,6 @@ package com.nickming.cloudcontact.module.index.view;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,27 +13,21 @@ import android.view.View;
 
 import com.nickming.cloudcontact.R;
 import com.nickming.cloudcontact.module.BaseActivity;
-import com.nickming.cloudcontact.module.index.presenter.ContactIndexContract;
-import com.nickming.cloudcontact.module.index.presenter.ContactIndexPresenter;
 
-public class ContactIndexActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener,ContactIndexContract.View {
-
-    protected ContactIndexContract.Presenter mPresenter;
+public class ContactIndexActivty extends BaseActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_index);
+        setContentView(R.layout.activity_contact_index_activty);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(final View view) {
             }
         });
 
@@ -46,9 +39,6 @@ public class ContactIndexActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        mPresenter=new ContactIndexPresenter();
-
     }
 
     @Override
@@ -64,7 +54,7 @@ public class ContactIndexActivity extends BaseActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.contact_index, menu);
+        getMenuInflater().inflate(R.menu.contact_index_activty, menu);
         return true;
     }
 
@@ -106,10 +96,5 @@ public class ContactIndexActivity extends BaseActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void setPresenter(ContactIndexContract.Presenter presenter) {
-        this.mPresenter=presenter;
     }
 }

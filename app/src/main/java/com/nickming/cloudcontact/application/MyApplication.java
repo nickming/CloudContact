@@ -2,8 +2,6 @@ package com.nickming.cloudcontact.application;
 
 import android.app.Application;
 
-import com.avos.avoscloud.AVOSCloud;
-
 /**
  * Desc:
  * Author:nickming
@@ -16,6 +14,6 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-        AVOSCloud.initialize(this,"wnOsHALf6v6WQmx8aPNz9hzF-gzGzoHsz","sQCWdKPapFxJ692IGUU4YPWQ");
+
     }
 }
