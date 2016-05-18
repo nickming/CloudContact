@@ -52,7 +52,7 @@ public class ContactIndexPresenter implements ContactIndexContract.Presenter {
                 .subscribe(new Action1<List<PersonInfo>>() {
                     @Override
                     public void call(List<PersonInfo> personInfos) {
-                        mView.showShortSnackBar("" + personInfos.size());
+                        mView.showContactList(personInfos);
                     }
                 });
     }
@@ -60,8 +60,8 @@ public class ContactIndexPresenter implements ContactIndexContract.Presenter {
     @Override
     public void requestPermission(Activity activity) {
         mPermissionHelper = PermissionManager.with(activity)
-                .addRequestCode(PermissionConstant.RQEUST_CONTACT_PERMISSION)
-                .permissions("android.permission.READ_CONTACTS")
+                .addRequestCode(PermissionConstant.RequestCode.RQEUST_CONTACT_PERMISSION)
+                .permissions(PermissionConstant.Permission.CONTACT)
                 .setPermissionsListener(new PermissionListener() {
                     @Override
                     public void onGranted() {
@@ -115,7 +115,7 @@ public class ContactIndexPresenter implements ContactIndexContract.Presenter {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
-            case PermissionConstant.RQEUST_CONTACT_PERMISSION:
+            case PermissionConstant.RequestCode.RQEUST_CONTACT_PERMISSION:
                 mPermissionHelper.onPermissionResult(permissions, grantResults);
                 break;
             default:

@@ -8,6 +8,9 @@ import android.support.design.widget.Snackbar;
 
 import com.nickming.cloudcontact.module.BasePresenter;
 import com.nickming.cloudcontact.module.BaseView;
+import com.nickming.cloudcontact.module.index.data.PersonInfo;
+
+import java.util.List;
 
 /**
  * Desc:
@@ -23,6 +26,8 @@ public interface ContactIndexContract {
         Snackbar showSnackBar(String msg);
 
         void showShortSnackBar(String msg);
+
+        void showContactList(List<PersonInfo> personInfoList);
     }
 
     interface Presenter extends BasePresenter

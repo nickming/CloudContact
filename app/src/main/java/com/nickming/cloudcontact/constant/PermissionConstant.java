@@ -9,5 +9,15 @@ package com.nickming.cloudcontact.constant;
  */
 public class PermissionConstant {
 
-    public static final int RQEUST_CONTACT_PERMISSION=101;
+    public static class Permission
+    {
+        public final static String CONTACT="android.permission.READ_CONTACTS";
+    }
+
+    public static class RequestCode
+    {
+        public static final int RQEUST_CONTACT_PERMISSION=101;
+    }
+
+
 }
